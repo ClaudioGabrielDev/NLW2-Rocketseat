@@ -25,15 +25,18 @@
 *{
     margin: 0;
     padding: 0; 
-    box-shadow: 0;
+    box-sizing: border-box;
 }
-
 html, body{
     height: 100vh;
-    background-color: var(--color-background);
+}
+
+body{
+    
+    background: var(--color-background);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
 }
 body, input, button, textarea{
     font-weight: 500;
@@ -41,7 +44,12 @@ body, input, button, textarea{
     font-size: 1.6rem;
     color: var(--color-text-base);
 }
-#conteiner{
+#container{
     width: 90vw;
     max-width: 700px;
+}
+@media (min-width: 700px){
+    :root{
+        font-size: 62.5%;
+    }
 }
