@@ -53,6 +53,7 @@
     background: var(--color-primary-lighter);
 }
 .buttons-container a.study:hover{
+    transform: translateY(-5px) translateX(5px);
     background: var(--color-primary-light);
 }
 .buttons-container a.give-classes{
@@ -60,6 +61,7 @@
     margin-right: 0;
 }
 .buttons-container a.give-classes:hover{
+    transform: translateY(-5px) translateX(5px);
     background: var(--color-secondary-dark);
 }
 .total-connections{
