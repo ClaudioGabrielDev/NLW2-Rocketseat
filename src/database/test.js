@@ -1,4 +1,4 @@
-const Database = require('./db')
+const Database = require('./db.js')
 const createProffy = require('./createProffy')
 
 Database.then( async (db) => {
@@ -59,9 +59,9 @@ Database.then( async (db) => {
         FROM class_schedule
         WHERE class_schedule.class_id = "1"
         AND class_schedule.weekday = "0"
-        AND class_schedule.time_from <= "1220"
-        AND class_schedule.time_to > "1220"
+        AND class_schedule.time_from <= "1300"
+        AND class_schedule.time_to > "1300"
     `)
 
-    console.log(selectClassesSchedules)
+    //console.log(selectClassesSchedules)
 })
