@@ -1,64 +1,32 @@
-/*
+// Servidor
 const express = require('express')
-const sever = express()
+const server = express()
 
-const { 
-    pageLanding, 
-    pageStudy, 
-    pageGiveClasses, 
+const  {
+    pageLanding,
+    pageStudy,
+    pageGiveClasses,
     saveClasses
 } = require('./pages')
 
 
-//configurar nunjucks
-const nunjucks = require("nunjucks")
-nunjucks.configure('src/views', {
-    express: sever,
-    noCache: true,
-})
-
-
-sever
-//receber req.body
-.use(express.urlencoded({extended: true}))
-//Configurar arquivos estáticos (css, scripts, images)
-.use(express.static("public"))
-//rotas da aplicação
-.get("/", pageLanding)
-
-.get("/study", pageStudy)
-
-.get("/give-classes", pageGiveClasses)
-
-.post("/save-classes", saveClasses)
-
-.listen(5500) */
-
-//Servidor
-
-const express = require('express')
-const server = express()
-
-const {pageLanding, pageStudy, pageGiveClasses, saveClasses, Sucess} = require("./pages")
-
-//configurar Nunjucks (template engine)
+//configurar nunjucks (template engine)
 const nunjucks = require('nunjucks')
 nunjucks.configure('src/views', {
     express: server,
     noCache: true,
 })
 
-//configs do servidor
+// Inicio e configuração do servidor
 server
-//recebimento dos formularios
+// receber os dados do req.body
 .use(express.urlencoded({ extended: true }))
-// configurar arquivos estaticos (imagens e css)
+// configurar arquivos estáticos (css, scripts, imagens)
 .use(express.static("public"))
 // rotas da aplicação
 .get("/", pageLanding)
 .get("/study", pageStudy)
 .get("/give-classes", pageGiveClasses)
-.get("/sucess", Sucess)
 .post("/save-classes", saveClasses)
-// iniciação e ip do servidor
+// start do servidor
 .listen(5500)
