@@ -64,4 +64,5 @@ Database.then( async (db) => {
     `)
 
     //console.log(selectClassesSchedules)
+    //testes
 })
